@@ -35,40 +35,7 @@
         line-height: 1.6;
       }
 
-      header {
-        background: var(--dark);
-        color: white;
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      header nav a {
-        color: white;
-        margin-left: 1.25rem;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      header nav a:hover {
-        color: var(--accent);
-      }
-
-      .hero {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        padding: 2rem;
-      }
-
+      /* VIDEO BACKGROUND */
       .background-video {
         position: fixed;
         top: 50%;
@@ -82,6 +49,47 @@
         filter: brightness(0.4) blur(4px);
         z-index: 0;
         pointer-events: none;
+      }
+
+      /* HEADER */
+      header {
+        position: relative;
+        z-index: 20;
+        background: rgba(15, 23, 42, 0.85); /* semi-transparent dark */
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+      }
+
+      header nav a {
+        color: white;
+        margin-left: 1.25rem;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      header nav a:hover {
+        color: var(--accent);
+      }
+
+      /* HERO SECTION */
+      .hero {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 2rem;
+        z-index: 10; /* Above video but below header */
       }
 
       .hero-content {
@@ -121,10 +129,16 @@
         box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
       }
 
+      /* SECTIONS */
       section {
+        position: relative;
+        z-index: 10;
         padding: 4rem 2rem;
         max-width: 1000px;
         margin: auto;
+        background: rgba(248, 250, 252, 0.85); /* light with transparency */
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       }
 
       .services {
@@ -151,11 +165,19 @@
         margin-bottom: 1rem;
       }
 
+      /* FOOTER */
       footer {
-        background: var(--dark);
+        position: relative;
+        z-index: 10;
+        background: rgba(15, 23, 42, 0.85);
         color: white;
         text-align: center;
         padding: 2rem;
+        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+        border-radius: 0 0 15px 15px;
+        max-width: 1000px;
+        margin: 2rem auto 0;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -166,6 +188,12 @@
     </style>
   </head>
   <body>
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
     <!-- Header -->
     <header>
       <div class="logo">Dronescape3D</div>
@@ -178,11 +206,6 @@
 
     <!-- Hero -->
     <section id="home" class="hero">
-      <video autoplay muted loop playsinline class="background-video">
-        <source src="background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
       <div class="hero-content">
         <h1>Elevate Your Perspective</h1>
         <p>
@@ -239,4 +262,3 @@
     </script>
   </body>
 </html>
-
