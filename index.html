@@ -34,18 +34,6 @@
         color: var(--dark);
         line-height: 1.6;
       }
-      .contact-button {
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  z-index: 10;
-  position: relative;
-}
-
-.contact-button .btn {
-  max-width: 90%;
-  word-wrap: break-word;
-  white-space: 
 
       /* VIDEO BACKGROUND */
       .background-video {
@@ -80,7 +68,7 @@
         margin-left: 1.25rem;
         text-decoration: none;
         font-weight: 600;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
       }
 
       header nav a:hover {
@@ -124,7 +112,9 @@
         font-size: 1rem;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        display: inline-block;
+        text-decoration: none;
       }
 
       .btn:hover {
@@ -161,8 +151,8 @@
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         color: white;
-        text-shadow: 0 0 5px rgba(0,0,0,0.8);
-        border: 1px solid rgba(255,255,255,0.2);
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .card:hover {
@@ -175,6 +165,21 @@
         margin-bottom: 1rem;
       }
 
+      /* CONTACT FIX */
+      .contact-button {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        z-index: 10;
+        position: relative;
+      }
+
+      .contact-button .btn {
+        max-width: 90%;
+        word-wrap: break-word;
+        white-space: normal;
+      }
+
       /* FOOTER */
       footer {
         position: relative;
@@ -183,7 +188,7 @@
         color: white;
         text-align: center;
         padding: 2rem;
-        text-shadow: 1px 1px 6px rgba(0,0,0,0.85);
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.85);
         max-width: 1000px;
         margin: 2rem auto 0;
       }
@@ -251,10 +256,13 @@
       <h2>Contact Us</h2>
       <p>
         Ready to start your project? Email us or call for a free consultation.
-  <div style="text-align:center;">
-  <a href="mailto:hello@dronescape3d.com" class="btn"
-    >Email Dronescape3dLondon@gmail.com</a
-</div>
+      </p>
+      <div class="contact-button">
+        <a href="mailto:hello@dronescape3d.com" class="btn">
+          Email Dronescape3dLondon@gmail.com
+        </a>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
