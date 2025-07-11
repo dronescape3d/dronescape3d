@@ -46,7 +46,7 @@
         min-height: 100vh;
         transform: translate(-50%, -50%);
         object-fit: cover;
-        filter: brightness(0.4) blur(4px);
+        filter: brightness(0.35) blur(3px);
         z-index: 0;
         pointer-events: none;
       }
@@ -55,14 +55,12 @@
       header {
         position: relative;
         z-index: 20;
-        background: rgba(15, 23, 42, 0.85); /* semi-transparent dark */
+        background: transparent;
         color: white;
         padding: 1rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        backdrop-filter: saturate(180%) blur(10px);
-        -webkit-backdrop-filter: saturate(180%) blur(10px);
       }
 
       header nav a {
@@ -70,6 +68,7 @@
         margin-left: 1.25rem;
         text-decoration: none;
         font-weight: 600;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
       }
 
       header nav a:hover {
@@ -89,28 +88,19 @@
         text-align: center;
         color: white;
         padding: 2rem;
-        z-index: 10; /* Above video but below header */
-      }
-
-      .hero-content {
-        position: relative;
         z-index: 10;
-        max-width: 600px;
-        background: rgba(0, 0, 0, 0.3);
-        padding: 1rem 2rem;
-        border-radius: 10px;
       }
 
       .hero h1 {
         font-size: clamp(2.5rem, 5vw, 4rem);
         margin-bottom: 1rem;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
       }
 
       .hero p {
         max-width: 600px;
         margin-bottom: 2rem;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.85);
       }
 
       .btn {
@@ -122,11 +112,12 @@
         font-size: 1rem;
         cursor: pointer;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
       }
 
       .btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
+        box-shadow: 0 6px 18px rgba(14, 165, 233, 0.7);
       }
 
       /* SECTIONS */
@@ -136,9 +127,13 @@
         padding: 4rem 2rem;
         max-width: 1000px;
         margin: auto;
-        background: rgba(248, 250, 252, 0.85); /* light with transparency */
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        background: transparent;
+        color: white;
+      }
+
+      section h2 {
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.85);
+        margin-bottom: 2rem;
       }
 
       .services {
@@ -148,17 +143,20 @@
       }
 
       .card {
-        background: white;
+        background: transparent;
         border-radius: 1.25rem;
         padding: 2rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.8);
+        border: 1px solid rgba(255,255,255,0.2);
       }
 
       .card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 20px rgba(14, 165, 233, 0.8);
+        border-color: var(--accent);
       }
 
       .card h3 {
@@ -169,13 +167,11 @@
       footer {
         position: relative;
         z-index: 10;
-        background: rgba(15, 23, 42, 0.85);
+        background: transparent;
         color: white;
         text-align: center;
         padding: 2rem;
-        backdrop-filter: saturate(180%) blur(10px);
-        -webkit-backdrop-filter: saturate(180%) blur(10px);
-        border-radius: 0 0 15px 15px;
+        text-shadow: 1px 1px 6px rgba(0,0,0,0.85);
         max-width: 1000px;
         margin: 2rem auto 0;
       }
@@ -206,28 +202,26 @@
 
     <!-- Hero -->
     <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Elevate Your Perspective</h1>
-        <p>
-          Stunning aerial photography, cinematic video, and accurate 3D mapping —
-          delivered by CAA-certified pilots using the latest DJI drones.
-        </p>
-        <button
-          class="btn"
-          onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});"
-        >
-          Get a Quote
-        </button>
-      </div>
+      <h1>Elevate Your Perspective</h1>
+      <p>
+        Stunning aerial photography, cinematic video, and accurate 3D mapping —
+        delivered by CAA-certified pilots using the latest DJI drones.
+      </p>
+      <button
+        class="btn"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});"
+      >
+        Get a Quote
+      </button>
     </section>
 
     <!-- Services -->
     <section id="services">
-      <h2 style="text-align:center;margin-bottom:2rem;">Our Services</h2>
+      <h2>Our Services</h2>
       <div class="services">
         <div class="card">
           <h3>Aerial Photography</h3>
-          <p>High-resolution stills perfect for real‑estate and marketing.</p>
+          <p>High-resolution stills perfect for real‑estate and events.</p>
         </div>
         <div class="card">
           <h3>4K Cinematic Video</h3>
@@ -242,12 +236,14 @@
 
     <!-- Contact -->
     <section id="contact">
-      <h2 style="text-align:center;margin-bottom:2rem;">Contact Us</h2>
-      <p style="text-align:center;max-width:600px;margin:auto 0 2rem;">
+      <h2>Contact Us</h2>
+      <p>
         Ready to start your project? Email us or call for a free consultation.
       </p>
       <div style="text-align:center;">
-        <a href="mailto:hello@dronescape3d.com" class="btn">Email hello@dronescape3d.com</a>
+        <a href="mailto:hello@dronescape3d.com" class="btn"
+          >Email Dronescape3dLondon@gmail.com</a
+        >
       </div>
     </section>
 
