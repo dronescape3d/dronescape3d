@@ -56,16 +56,32 @@
       }
 
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 70vh;
-  background: url('https://dronescape3d.github.io/dronescape3d/DSC_0034.JPG') center/cover no-repeat;
-  color: white;
   padding: 2rem;
+  color: white;
+  overflow: hidden;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://dronescape3d.github.io/dronescape3d/DSC_0034.JPG') center/cover no-repeat;
+  filter: blur(8px) brightness(0.4);
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 
       .hero h1 {
