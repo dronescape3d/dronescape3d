@@ -69,19 +69,19 @@
         padding: 2rem;
       }
 
-      .background-video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-        object-fit: cover;
-        filter: brightness(0.4) blur(4px);
-      }
+     .background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: brightness(0.4) blur(4px);
+  pointer-events: none; /* so clicks pass through */
+}
+
 
       .hero-content {
         position: relative;
